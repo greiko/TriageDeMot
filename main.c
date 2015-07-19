@@ -8,17 +8,19 @@
 
 #include "gestionStatistique.h"
 #include "listeChaine.h"
+
 #define  TAILLE_MOT_MAX 20
 
 
-FILE* ouvrirFichier(char *pathfichier);
+FILE *ouvrirFichier(char *pathfichier);
 
 Option validationOptionFichier(int nbArgument, char **arguments);
 
-void creerListeChaine(FILE *fichier,Option option,char* nomDuFichierStats);
+void creerListeChaine(FILE *fichier, Option option, char *nomDuFichierStats);
 
-void triageMot(Liste listeATrier,int longueurListe);
-Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierMot);
+void triageMot(Liste listeATrier, int longueurListe);
+
+Liste motComplet(char c, char *mot, Stats stats, Liste liste, int n, Boolean premierMot);
 
 
 int main(int argc, char **argv)
@@ -27,10 +29,9 @@ int main(int argc, char **argv)
   Option option = AUCUN;
   option = validationOptionFichier(argc, argv);
   fichierALire = ouvrirFichier(argv[1]);
-  creerListeChaine(fichierALire,option,argv[3]);
-
+  creerListeChaine(fichierALire, option, argv[3]);
+  fclose(fichierALire);
   return 0;
-
 }
 
 FILE *ouvrirFichier(char *pathFichier)
@@ -45,7 +46,7 @@ FILE *ouvrirFichier(char *pathFichier)
   return fichier;
 }
 
-void creerListeChaine(FILE *fichier,Option option,char* nomDuFichierStats)
+void creerListeChaine(FILE *fichier, Option option, char *nomDuFichierStats)
 {
   Liste liste;
   Stats stats = NULL;
@@ -64,36 +65,36 @@ void creerListeChaine(FILE *fichier,Option option,char* nomDuFichierStats)
     }
     else
     {
-      liste = motComplet(c,mot,stats,liste,n,premierMot);
+      liste = motComplet(c, mot, stats, liste, n, premierMot);
       n = 0;
       premierMot = FALSE;
       c = fgetc(fichier);
     }
   }
-  afficherListe(liste,stats,option,nomDuFichierStats);
+  afficherListe(liste, stats, option, nomDuFichierStats);
 }
 
-Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierMot)
+Liste motComplet(char c, char *mot, Stats stats, Liste liste, int n, Boolean premierMot)
 {
   if (c == '\n')
   {
-    compteurLignes(stats,1);
+    compteurLignes(stats, 1);
   }
   mot[n] = '\0';
   if (premierMot == TRUE)
   {
-    compteurMotSansDoublons(stats);
-    liste = creeMot(mot,stats);
-    compteurLettre(stats,mot);
+    compteurMotSansDoublons(stats,mot);
+    liste = creeMot(mot, stats);
+    compteurLettre(stats, mot);
   }
   else
   {
-    liste = ajouterMot(liste,mot,stats);
+    liste = ajouterMot(liste, mot, stats);
   }
   return liste;
 }
 
-Option validationOptionFichier(int nbArgument, char** arguments)
+Option validationOptionFichier(int nbArgument, char **arguments)
 {
   if (nbArgument < 2 || nbArgument > 4)
   {

@@ -45,15 +45,15 @@ Liste ajouterMot(Liste liste, char mot[TAILLE_MOT_MAX], Stats stats)
     }
   }
   echanger = comparaisonMot(courant->mot, nouveauMot->mot);
-  debutListe = quelquechose(echanger,stats,courant,nouveauMot,debutListe);
+  debutListe = placementMot(echanger, stats, courant, nouveauMot, debutListe);
   return debutListe;
 }
 
-Liste quelquechose(Boolean echanger,Stats stats,Liste courant,Liste nouveauMot,Liste debutListe)
+Liste placementMot(Boolean echanger, Stats stats, Liste courant, Liste nouveauMot, Liste debutListe)
 {
   if (echanger != SAME)
   {
-    compteurMotSansDoublons(stats);
+    compteurMotSansDoublons(stats,nouveauMot->mot);
     compteurLettre(stats, nouveauMot->mot);
     if (courant->prochain == NULL && echanger == FALSE)
     {

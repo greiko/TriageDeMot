@@ -8,9 +8,6 @@
 #include <string.h>
 #include <errno.h>
 
-char ALPHABET[] = {'A','B','C','D','E','F','G','H','I','J',
-                   'K','L','M','N','O','P','Q','R','S','T',
-                   'U','V','W','X','Y','Z'};
 
 struct statistique
 {
@@ -18,7 +15,7 @@ struct statistique
   int nb_mots_avec_double;
   int nb_lignes;
   int nb_lettres;
-  char *lettre_plus_frequente;
+  int *lettre_plus_frequente;
 };
 
 Stats initiationStats(Stats stats)
@@ -32,10 +29,10 @@ Stats initiationStats(Stats stats)
   return stats;
 }
 
-char *initiationTableauLettre()
+int *initiationTableauLettre()
 {
-  char* tableau;
-  tableau = (char*) malloc(sizeof(char) * 26);
+  int* tableau;
+  tableau = (int*) malloc(sizeof(int) * 26);
   int i;
   for (i = 0; i < 26; i++)
   {
@@ -50,8 +47,13 @@ void compteurLettre(Stats stats, char *mot)
   stats->nb_lettres += strlen(mot);
 }
 
-void compteurMotSansDoublons(Stats stats)
+void compteurMotSansDoublons(Stats stats,char* mot)
 {
+  int i;
+  for (i = 0;i < strlen(mot);i++)
+  {
+    frequenceLettre(stats,mot[i]);
+  }
   stats->nb_mots_sans_double += 1;
 }
 void compteurMotTotal(Stats stats)
@@ -66,24 +68,47 @@ void compteurLignes(Stats stats,int combien)
 
 void frequenceLettre(Stats stats, char lettre)
 {
-
+  char alphabet[] = {'A','B','C','D','E','F','G','H','I','J',
+                     'K','L','M','N','O','P','Q','R','S','T',
+                     'U','V','W','X','Y','Z'};
+  int i;
+  int position = 0;
+  for (i = 0;lettre != alphabet[i];i++)
+  {
+    position++;
+  }
+  stats->lettre_plus_frequente[position] += 1;
 }
 
 char lettreFrequente(Stats stats)
 {
-  return 'k';
+  char alphabet[] = {'A','B','C','D','E','F','G','H','I','J',
+                     'K','L','M','N','O','P','Q','R','S','T',
+                     'U','V','W','X','Y','Z'};
+  int frequence = stats->lettre_plus_frequente[0];
+  int position = 0;
+  int i;
+  for (i = 1;i < 26;i++)
+  {
+    if (stats->lettre_plus_frequente[i] > frequence)
+    {
+      frequence = stats->lettre_plus_frequente[i];
+      position = i;
+    }
+  }
+  return alphabet[position];
 }
 
 void afficherStats(Stats stats,char* nomDuFichier)
 {
   FILE* fichier = NULL;
   fichier = validationFichierSortie(fichier,nomDuFichier);
-  //int nb_mots_sans_doublons = stats->nb_mots_sans_double - stats->nb_mots_avec_double;
   fprintf(fichier,"Nombre de mots avec doublons: %d\n",stats->nb_mots_avec_double);
   fprintf(fichier,"Nombre de mots sans doublons: %d\n",stats->nb_mots_sans_double);
   fprintf(fichier,"Nombre de lignes: %d\n",stats->nb_lignes);
   fprintf(fichier,"Nombre de lettres: %d\n",stats->nb_lettres);
-
+  fprintf(fichier,"Lettre la plus frequente: %c\n",lettreFrequente(stats));
+  fclose(fichier);
 }
 
 FILE* validationFichierSortie(FILE* fichier,char* nomDuFichier)

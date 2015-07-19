@@ -9,9 +9,9 @@
 #include <stdlib.h>
 typedef struct statistique *Stats;
 Stats initiationStats(Stats stats);
-char* initiationTableauLettre();
+int* initiationTableauLettre();
 void compteurLettre(Stats stats,char* mot);
-void compteurMotSansDoublons(Stats stats);
+void compteurMotSansDoublons(Stats stats,char* mot);
 void compteurMotTotal(Stats stats);
 void compteurLignes(Stats stats,int combien);
 void frequenceLettre(Stats stats,char lettre);

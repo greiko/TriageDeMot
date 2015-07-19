@@ -37,23 +37,12 @@ int main(int argc,char** argv)
   //should be true TRUE=0 FALSE=1
   printf("echanger = %d\n",echanger);
   //
-  Liste liste = creeMot(votre,stats);
-  liste = ajouterMot(liste,logiciel,stats);
-  liste = ajouterMot(liste,sera,stats);
-  liste = ajouterMot(liste,lance,stats);
-  liste = ajouterMot(liste,a,stats);
-  liste = ajouterMot(liste,la,stats);
-  liste = ajouterMot(liste,console,stats);
-  liste = ajouterMot(liste,en,stats);
-
-  //liste = ajouterMot(liste,un,stats);
-  //liste = ajouterMot(liste,une,stats);
-
-//  Liste m1 = creeMot(pipi);
-//  Liste m2 = creeMot(bebe);
-//  placerLeMot(liste,liste,m2)
-  afficherListe(liste);
-  afficherStats(stats);
+  Liste liste = creeMot(caca,stats);
+  liste = ajouterMot(liste,pipi,stats);
+  liste = ajouterMot(liste,delta,stats);
+  liste = ajouterMot(liste,alpha,stats);
+  liste = ajouterMot(liste,gamma,stats);
+  afficherStats(stats,"testStats.txt");
 
   return 0;
 }
