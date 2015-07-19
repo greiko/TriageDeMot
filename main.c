@@ -9,14 +9,13 @@
 #include "gestionStatistique.h"
 #include "listeChaine.h"
 #define  TAILLE_MOT_MAX 20
-typedef enum {AUCUN, AVEC, SANS} Option;
 
 
 FILE* ouvrirFichier(char *pathfichier);
 
-int validationOptionFichier(int nbArgument, char **arguments);
+Option validationOptionFichier(int nbArgument, char **arguments);
 
-void creerListeChaine(FILE *fichier);
+void creerListeChaine(FILE *fichier,Option option);
 
 void triageMot(Liste listeATrier,int longueurListe);
 Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierMot);
@@ -29,7 +28,7 @@ int main(int argc, char **argv)
   Option option = AUCUN;
   option = validationOptionFichier(argc, argv);
   fichierALire = ouvrirFichier(argv[1]);
-  creerListeChaine(fichierALire);
+  creerListeChaine(fichierALire,option);
 
   return 0;
 
@@ -47,7 +46,7 @@ FILE *ouvrirFichier(char *pathFichier)
   return fichier;
 }
 
-void creerListeChaine(FILE *fichier)
+void creerListeChaine(FILE *fichier,Option option)
 {
   Liste liste;
   Stats stats;
@@ -72,8 +71,7 @@ void creerListeChaine(FILE *fichier)
       c = fgetc(fichier);
     }
   }
-  afficherListe(liste);
-  afficherStats(stats);
+  afficherListe(liste,stats,option);
 }
 
 Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierMot)
@@ -96,7 +94,7 @@ Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierM
   return liste;
 }
 
-int validationOptionFichier(int nbArgument, char **arguments)
+Option validationOptionFichier(int nbArgument, char **arguments)
 {
   if (nbArgument < 2 || nbArgument > 4)
   {

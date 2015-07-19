@@ -11,6 +11,7 @@
 #include "gestionStatistique.h"
 typedef struct listeChaine *Liste;
 typedef enum {TRUE,FALSE,SAME} Boolean;
+typedef enum {AUCUN, AVEC, SANS} Option;
 
 Liste creeMot(char *premierMot, Stats stats);
 Boolean comparaisonMot(char* motCourant,char* nouveauMot);
@@ -18,7 +19,7 @@ Liste placerLeMot(Liste courant,Liste nouveauMot);
 Liste ajouterMot(Liste liste, char mot[TAILLE_MOT_MAX], Stats stats);
 int longueur(char *courant, char *nouveauMot);
 Liste quelquechose(Boolean echanger,Stats stats,Liste courant,Liste nouveauMot,Liste debutListe);
-void afficherListe(Liste liste);
+void afficherListe(Liste liste,Stats stats,Option avecStats);
 
 
 
