@@ -14,19 +14,19 @@
 
 FILE *ouvrirFichier(char *pathfichier);
 
-Option validationOptionFichier(int nbArgument, char **arguments);
+Option_t validationOptionFichier(int nbArgument, char **arguments);
 
-void creerListeChaine(FILE *fichier, Option option, char *nomDuFichierStats);
+void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats);
 
-void triageMot(Liste listeATrier, int longueurListe);
+void triageMot(Liste_t listeATrier, int longueurListe_t);
 
-Liste motComplet(char c, char *mot, Stats stats, Liste liste, int n, Boolean premierMot);
+Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boolean_t premierMot);
 
 
 int main(int argc, char **argv)
 {
   FILE *fichierALire = NULL;
-  Option option = AUCUN;
+  Option_t option = AUCUN;
   option = validationOptionFichier(argc, argv);
   fichierALire = ouvrirFichier(argv[1]);
   creerListeChaine(fichierALire, option, argv[3]);
@@ -46,11 +46,11 @@ FILE *ouvrirFichier(char *pathFichier)
   return fichier;
 }
 
-void creerListeChaine(FILE *fichier, Option option, char *nomDuFichierStats)
+void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats)
 {
-  Liste liste;
-  Stats stats = NULL;
-  Boolean premierMot = TRUE;
+  Liste_t liste;
+  Stats_t stats = NULL;
+  Boolean_t premierMot = TRUE;
   char c = fgetc(fichier);
   char mot[TAILLE_MOT_MAX];
   int n = 0;
@@ -74,7 +74,7 @@ void creerListeChaine(FILE *fichier, Option option, char *nomDuFichierStats)
   afficherListe(liste, stats, option, nomDuFichierStats);
 }
 
-Liste motComplet(char c, char *mot, Stats stats, Liste liste, int n, Boolean premierMot)
+Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boolean_t premierMot)
 {
   if (c == '\n')
   {
@@ -83,7 +83,7 @@ Liste motComplet(char c, char *mot, Stats stats, Liste liste, int n, Boolean pre
   mot[n] = '\0';
   if (premierMot == TRUE)
   {
-    compteurMotSansDoublons(stats,mot);
+    compteurMotSansDoublons(stats, mot);
     liste = creeMot(mot, stats);
     compteurLettre(stats, mot);
   }
@@ -94,7 +94,7 @@ Liste motComplet(char c, char *mot, Stats stats, Liste liste, int n, Boolean pre
   return liste;
 }
 
-Option validationOptionFichier(int nbArgument, char **arguments)
+Option_t validationOptionFichier(int nbArgument, char **arguments)
 {
   if (nbArgument < 2 || nbArgument > 4)
   {

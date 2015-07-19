@@ -7,31 +7,31 @@
 
 struct listeChaine
 {
-  Liste precedent;
+  Liste_t precedent;
   char mot[TAILLE_MOT_MAX];
-  Liste prochain;
+  Liste_t prochain;
 };
 
-Liste creeMot(char *premierMot, Stats stats)
+Liste_t creeMot(char *premierMot, Stats_t stats)
 {
-  Liste nouvelleListe;
+  Liste_t nouvelleListe;
   compteurMotTotal(stats);
-  nouvelleListe = (Liste) malloc(sizeof(struct listeChaine));
+  nouvelleListe = (Liste_t) malloc(sizeof(struct listeChaine));
   strcpy(nouvelleListe->mot, premierMot);
   return nouvelleListe;
 }
 
-Liste ajouterMot(Liste liste, char mot[TAILLE_MOT_MAX], Stats stats)
+Liste_t ajouterMot(Liste_t liste, char mot[TAILLE_MOT_MAX], Stats_t stats)
 {
   if (mot == NULL)
   {
     printf("erreur\n");
     exit(0);
   }
-  Liste nouveauMot = creeMot(mot, stats);
-  Boolean echanger = FALSE;
-  Liste debutListe = liste;
-  Liste courant = liste;
+  Liste_t nouveauMot = creeMot(mot, stats);
+  Boolean_t echanger = FALSE;
+  Liste_t debutListe = liste;
+  Liste_t courant = liste;
   while (echanger != TRUE && courant->prochain != NULL)
   {
     echanger = comparaisonMot(courant->mot, nouveauMot->mot);
@@ -49,11 +49,11 @@ Liste ajouterMot(Liste liste, char mot[TAILLE_MOT_MAX], Stats stats)
   return debutListe;
 }
 
-Liste placementMot(Boolean echanger, Stats stats, Liste courant, Liste nouveauMot, Liste debutListe)
+Liste_t placementMot(Boolean_t echanger, Stats_t stats, Liste_t courant, Liste_t nouveauMot, Liste_t debutListe)
 {
   if (echanger != SAME)
   {
-    compteurMotSansDoublons(stats,nouveauMot->mot);
+    compteurMotSansDoublons(stats, nouveauMot->mot);
     compteurLettre(stats, nouveauMot->mot);
     if (courant->prochain == NULL && echanger == FALSE)
     {
@@ -61,7 +61,7 @@ Liste placementMot(Boolean echanger, Stats stats, Liste courant, Liste nouveauMo
       courant->prochain = nouveauMot;
       return debutListe;
     }
-    courant = placerLeMot(courant,nouveauMot);
+    courant = placerLeMot(courant, nouveauMot);
     if (courant->precedent == NULL)
     {
       debutListe = courant;
@@ -70,7 +70,7 @@ Liste placementMot(Boolean echanger, Stats stats, Liste courant, Liste nouveauMo
   return debutListe;
 }
 
-Liste placerLeMot(Liste courant, Liste nouveauMot)
+Liste_t placerLeMot(Liste_t courant, Liste_t nouveauMot)
 {
   if (courant->precedent != NULL)
   {
@@ -92,10 +92,10 @@ int longueur(char *courant, char *nouveauMot)
   return longueurCourte;
 }
 
-Boolean comparaisonMot(char *motCourant, char *nouveauMot)
+Boolean_t comparaisonMot(char *motCourant, char *nouveauMot)
 {
-  Boolean echanger = FALSE;
-  int longueurCourte = longueur(motCourant,nouveauMot);
+  Boolean_t echanger = FALSE;
+  int longueurCourte = longueur(motCourant, nouveauMot);
   int i;
   if (strcmp(motCourant, nouveauMot) == 0)
   {
@@ -119,9 +119,9 @@ Boolean comparaisonMot(char *motCourant, char *nouveauMot)
   return echanger;
 }
 
-void afficherListe(Liste liste,Stats stats,Option avecStats,char* nomDuFichier)
+void afficherListe(Liste_t liste, Stats_t stats, Option_t avecStats, char *nomDuFichier)
 {
-  Liste courant = liste;
+  Liste_t courant = liste;
   while (courant->prochain != NULL)
   {
     printf("%s\n", courant->mot);
@@ -130,6 +130,6 @@ void afficherListe(Liste liste,Stats stats,Option avecStats,char* nomDuFichier)
   printf("%s\n", courant->mot);
   if (avecStats == AVEC)
   {
-    afficherStats(stats,nomDuFichier);
+    afficherStats(stats, nomDuFichier);
   }
 }

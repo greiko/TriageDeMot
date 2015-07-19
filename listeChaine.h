@@ -9,18 +9,30 @@
 #define TAILLE_MOT_MAX 20
 
 #include "gestionStatistique.h"
-typedef struct listeChaine *Liste;
-typedef enum {TRUE,FALSE,SAME} Boolean;
-typedef enum {AUCUN, AVEC, SANS} Option;
 
-Liste creeMot(char *premierMot, Stats stats);
-Boolean comparaisonMot(char* motCourant,char* nouveauMot);
-Liste placerLeMot(Liste courant,Liste nouveauMot);
-Liste ajouterMot(Liste liste, char mot[TAILLE_MOT_MAX], Stats stats);
+typedef struct listeChaine *Liste_t;
+typedef enum
+{
+  TRUE, FALSE, SAME
+} Boolean_t;
+typedef enum
+{
+  AUCUN, AVEC, SANS
+} Option_t;
+
+Liste_t creeMot(char *premierMot, Stats_t stats);
+
+Boolean_t comparaisonMot(char *motCourant, char *nouveauMot);
+
+Liste_t placerLeMot(Liste_t courant, Liste_t nouveauMot);
+
+Liste_t ajouterMot(Liste_t liste, char mot[TAILLE_MOT_MAX], Stats_t stats);
+
 int longueur(char *courant, char *nouveauMot);
-Liste placementMot(Boolean echanger, Stats stats, Liste courant, Liste nouveauMot, Liste debutListe);
-void afficherListe(Liste liste,Stats stats,Option avecStats,char* nomDuFichier);
 
+Liste_t placementMot(Boolean_t echanger, Stats_t stats, Liste_t courant, Liste_t nouveauMot, Liste_t debutListe);
+
+void afficherListe(Liste_t liste, Stats_t stats, Option_t avecStats, char *nomDuFichier);
 
 
 #endif //TP2_LISTECHAINE_H

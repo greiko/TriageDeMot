@@ -5,18 +5,30 @@
 
 #ifndef TP2_GESTIONSTATISTIQUE_H
 #define TP2_GESTIONSTATISTIQUE_H
+
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct statistique *Stats;
-Stats initiationStats(Stats stats);
-int* initiationTableauLettre();
-void compteurLettre(Stats stats,char* mot);
-void compteurMotSansDoublons(Stats stats,char* mot);
-void compteurMotTotal(Stats stats);
-void compteurLignes(Stats stats,int combien);
-void frequenceLettre(Stats stats,char lettre);
-char lettreFrequente(Stats stats);
-void afficherStats(Stats stats,char* nomDuFichier);
-FILE* validationFichierSortie(FILE* fichier,char* nomDuFichier);
+
+typedef struct statistique *Stats_t;
+
+Stats_t initiationStats(Stats_t stats);
+
+int *initiationTableauLettre();
+
+void compteurLettre(Stats_t stats, char *mot);
+
+void compteurMotSansDoublons(Stats_t stats, char *mot);
+
+void compteurMotTotal(Stats_t stats);
+
+void compteurLignes(Stats_t stats, int combien);
+
+void frequenceLettre(Stats_t stats, char lettre);
+
+char lettreFrequente(Stats_t stats);
+
+void afficherStats(Stats_t stats, char *nomDuFichier);
+
+FILE *validationFichierSortie(FILE *fichier, char *nomDuFichier);
 
 #endif //TP2_GESTIONSTATISTIQUE_H

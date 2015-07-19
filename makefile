@@ -8,15 +8,10 @@ MTEST = gestionStatistique.o listeChaine.o testListeChaine.o
 
 all: link
 
-test: mtestcompile
-
-mtestcompile:
-	$(CC) $(OPTIONS) gestionStatistique.c listeChaine.c testListeChaine.c -g
-
 compile: $(OBJS)
 
 .c.o:
-	$(CC) $(OPTIONS) gestionStatistique.c listeChaine.c main.c -c
+	$(CC) $(OPTIONS) *.c -c
 
 link: compile
 	$(CC) $(OBJS) -o $(EXE)
@@ -27,8 +22,5 @@ debug:
 clean:
 	rm $(EXE)
 	rm $(OBJS)
-cleantest:
-	rm $(EXE)
-	rm $(MTEST)
 
 
