@@ -74,12 +74,25 @@ char lettreFrequente(Stats stats)
   return 'k';
 }
 
-void afficherStats(Stats stats)
+void afficherStats(Stats stats,char* nomDuFichier)
 {
-  int nb_mots_sans_doublons = stats->nb_mots_sans_double - stats->nb_mots_avec_double;
-  printf("Nombre de mots avec doublons: %d\n",stats->nb_mots_avec_double);
-  printf("Nombre de mots sans doublons: %d\n",stats->nb_mots_sans_double);
-  printf("Nombre de lignes: %d\n",stats->nb_lignes);
-  printf("Nombre de lettres: %d\n",stats->nb_lettres);
+  FILE* fichier = NULL;
+  fichier = validationFichierSortie(fichier,nomDuFichier);
+  //int nb_mots_sans_doublons = stats->nb_mots_sans_double - stats->nb_mots_avec_double;
+  fprintf(fichier,"Nombre de mots avec doublons: %d\n",stats->nb_mots_avec_double);
+  fprintf(fichier,"Nombre de mots sans doublons: %d\n",stats->nb_mots_sans_double);
+  fprintf(fichier,"Nombre de lignes: %d\n",stats->nb_lignes);
+  fprintf(fichier,"Nombre de lettres: %d\n",stats->nb_lettres);
 
+}
+
+FILE* validationFichierSortie(FILE* fichier,char* nomDuFichier)
+{
+  fichier = fopen(nomDuFichier,"w");
+  if(fichier == NULL)
+  {
+    printf("Error!");
+    exit(1);
+  }
+  return fichier;
 }

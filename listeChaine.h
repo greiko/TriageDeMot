@@ -19,7 +19,7 @@ Liste placerLeMot(Liste courant,Liste nouveauMot);
 Liste ajouterMot(Liste liste, char mot[TAILLE_MOT_MAX], Stats stats);
 int longueur(char *courant, char *nouveauMot);
 Liste quelquechose(Boolean echanger,Stats stats,Liste courant,Liste nouveauMot,Liste debutListe);
-void afficherListe(Liste liste,Stats stats,Option avecStats);
+void afficherListe(Liste liste,Stats stats,Option avecStats,char* nomDuFichier);
 
 
 

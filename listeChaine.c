@@ -119,7 +119,7 @@ Boolean comparaisonMot(char *motCourant, char *nouveauMot)
   return echanger;
 }
 
-void afficherListe(Liste liste,Stats stats,Option avecStats)
+void afficherListe(Liste liste,Stats stats,Option avecStats,char* nomDuFichier)
 {
   Liste courant = liste;
   while (courant->prochain != NULL)
@@ -130,6 +130,6 @@ void afficherListe(Liste liste,Stats stats,Option avecStats)
   printf("%s\n", courant->mot);
   if (avecStats == AVEC)
   {
-    afficherStats(stats);
+    afficherStats(stats,nomDuFichier);
   }
 }

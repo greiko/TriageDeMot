@@ -15,7 +15,7 @@ FILE* ouvrirFichier(char *pathfichier);
 
 Option validationOptionFichier(int nbArgument, char **arguments);
 
-void creerListeChaine(FILE *fichier,Option option);
+void creerListeChaine(FILE *fichier,Option option,char* nomDuFichierStats);
 
 void triageMot(Liste listeATrier,int longueurListe);
 Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierMot);
@@ -23,12 +23,11 @@ Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierM
 
 int main(int argc, char **argv)
 {
-  FILE *fichierALire;
-  FILE *fichierStats;
+  FILE *fichierALire = NULL;
   Option option = AUCUN;
   option = validationOptionFichier(argc, argv);
   fichierALire = ouvrirFichier(argv[1]);
-  creerListeChaine(fichierALire,option);
+  creerListeChaine(fichierALire,option,argv[3]);
 
   return 0;
 
@@ -46,10 +45,10 @@ FILE *ouvrirFichier(char *pathFichier)
   return fichier;
 }
 
-void creerListeChaine(FILE *fichier,Option option)
+void creerListeChaine(FILE *fichier,Option option,char* nomDuFichierStats)
 {
   Liste liste;
-  Stats stats;
+  Stats stats = NULL;
   Boolean premierMot = TRUE;
   char c = fgetc(fichier);
   char mot[TAILLE_MOT_MAX];
@@ -71,7 +70,7 @@ void creerListeChaine(FILE *fichier,Option option)
       c = fgetc(fichier);
     }
   }
-  afficherListe(liste,stats,option);
+  afficherListe(liste,stats,option,nomDuFichierStats);
 }
 
 Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierMot)
@@ -94,14 +93,14 @@ Liste motComplet(char c,char* mot,Stats stats,Liste liste,int n,Boolean premierM
   return liste;
 }
 
-Option validationOptionFichier(int nbArgument, char **arguments)
+Option validationOptionFichier(int nbArgument, char** arguments)
 {
   if (nbArgument < 2 || nbArgument > 4)
   {
-    printf("Erreur!\n");
+    printf("Erreur pas assez darguments!\n");
     exit(0);
   }
-  if (nbArgument == 4 && strcmp("-S", arguments[2]))
+  if (nbArgument == 4 && strcmp("-S", arguments[2]) == 0)
   {
     return AVEC;
   }
