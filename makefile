@@ -1,6 +1,6 @@
 CC = gcc
 OPTIONS = -Wall
-EXE = main
+EXE = tri
 OBJS = gestionStatistique.o listeChaine.o main.o
 MTEST = gestionStatistique.o listeChaine.o testListeChaine.o
 

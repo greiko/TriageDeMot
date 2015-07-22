@@ -25,7 +25,7 @@ Liste_t ajouterMot(Liste_t liste, char mot[TAILLE_MOT_MAX], Stats_t stats)
 {
   if (mot == NULL)
   {
-    printf("erreur\n");
+    printf("Erreur, le mot est NULL!: %d\n",errno);
     exit(0);
   }
   Liste_t nouveauMot = creeMot(mot, stats);

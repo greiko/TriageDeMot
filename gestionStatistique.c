@@ -117,7 +117,7 @@ FILE *validationFichierSortie(FILE *fichier, char *nomDuFichier)
   fichier = fopen(nomDuFichier, "w");
   if (fichier == NULL)
   {
-    printf("Error!");
+    printf("Erreur ouverture du fichier de statistiques: %d",errno);
     exit(1);
   }
   return fichier;
