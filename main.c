@@ -11,14 +11,28 @@
 
 #define  TAILLE_MOT_MAX 20
 
+/*
+ * Valide si le fichier contenant les mots soit bien traitee.
+ * pathFichier: Le path du fichier a ouvrir.
+ * Valeur de retour: Pointeur sur le fichier ouvert.
+ */
+FILE *ouvrirFichier(char *pathFichier);
 
-FILE *ouvrirFichier(char *pathfichier);
-
+/*
+ * Validation de la ligne de commande.
+ * nbArgument: Le nombre de argument sur la ligne de commande.
+ * arguments: Les arguments de la ligne de commande.
+ * Valeur de retour: Avec ou sans statistiques.
+ */
 Option_t validationOptionFichier(int nbArgument, char **arguments);
 
+/*
+ * Cree la liste chaine avec les mots qui sont contenus dans le fichier.
+ * fichier: Fichier contenant les mots a trier.
+ * option: Avec ou sans statistiques.
+ * nomDuFichierStats: Le nom du fichier statistiques si utiliser.
+ */
 void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats);
-
-void triageMot(Liste_t listeATrier, int longueurListe_t);
 
 Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boolean_t premierMot);
 
@@ -26,7 +40,7 @@ Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boole
 int main(int argc, char **argv)
 {
   FILE *fichierALire = NULL;
-  Option_t option = AUCUN;
+  Option_t option = SANS;
   option = validationOptionFichier(argc, argv);
   fichierALire = ouvrirFichier(argv[1]);
   creerListeChaine(fichierALire, option, argv[3]);
@@ -48,10 +62,10 @@ FILE *ouvrirFichier(char *pathFichier)
 
 void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats)
 {
-  Liste_t liste;
+  Liste_t liste = NULL;
   Stats_t stats = NULL;
   Boolean_t premierMot = TRUE;
-  char c = fgetc(fichier);
+  char c = (char) fgetc(fichier);
   char mot[TAILLE_MOT_MAX];
   int n = 0;
   stats = initiationStats(stats);
@@ -61,14 +75,14 @@ void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats)
     {
       mot[n] = c;
       n++;
-      c = fgetc(fichier);
+      c = (char) fgetc(fichier);
     }
     else
     {
       liste = motComplet(c, mot, stats, liste, n, premierMot);
       n = 0;
       premierMot = FALSE;
-      c = fgetc(fichier);
+      c = (char) fgetc(fichier);
     }
   }
   afficherListe(liste, stats, option, nomDuFichierStats);

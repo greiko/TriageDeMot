@@ -6,8 +6,7 @@
 #ifndef TP2_GESTIONSTATISTIQUE_H
 #define TP2_GESTIONSTATISTIQUE_H
 
-#include <stdio.h>
-#include <stdlib.h>
+
 
 typedef struct statistique *Stats_t;
 
@@ -76,7 +75,7 @@ void afficherStats(Stats_t stats, char *nomDuFichier);
  * Validation lors de l'ouverture du fichier de statistiques.
  * fichier: Le pointeur vers le fichier.
  * nomDuFichier: Le path du fichier de statistiques.
- * Valeur de retour: Le fichier ouvert.
+ * Valeur de retour:
  */
 FILE *validationFichierSortie(FILE *fichier, char *nomDuFichier);
 

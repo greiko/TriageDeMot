@@ -1,0 +1,5 @@
+Nombre de mots avec doublons: 9
+Nombre de mots sans doublons: 8
+Nombre de lignes: 3
+Nombre de lettres: 35
+Lettre la plus frequente: I

@@ -17,7 +17,7 @@ typedef enum
 } Boolean_t;
 typedef enum
 {
-  AUCUN, AVEC, SANS
+  AVEC, SANS
 } Option_t;
 
 /*
