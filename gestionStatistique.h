@@ -5,7 +5,8 @@
 
 #ifndef TP2_GESTIONSTATISTIQUE_H
 #define TP2_GESTIONSTATISTIQUE_H
-
+#include <stdio.h>
+#include <stdlib.h>
 
 
 typedef struct statistique *Stats_t;

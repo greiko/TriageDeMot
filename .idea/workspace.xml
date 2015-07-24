@@ -3,9 +3,9 @@
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" assignedExecutableTargets="true" buildAllGenerated="true">
     <generated>
       <config projectName="tri" targetName="main" />
-      <config projectName="tri" targetName="triage" />
-      <config projectName="tp2" targetName="tp2" />
       <config projectName="triageINF3135" targetName="triage" />
+      <config projectName="tp2" targetName="tp2" />
+      <config projectName="tri" targetName="triage" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="false" GENERATION_PASS_SYSTEM_ENVIRONMENT="true">
@@ -14,30 +14,8 @@
     </ADDITIONAL_GENERATION_ENVIRONMENT>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9c9d6223-1535-46cf-827e-185de3a7ce50" name="Default" comment="Version 2.0&#10;A faire:&#10;  - Faire du clean up, optimisation">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/attendu_1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/attendu_2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/attendu_3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/attendu_4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oldFichierTest/cacacac" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/greiko.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oldFichierTest/mainBackup.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/nik.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oldFichierTest/stats.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/stats1.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/stats2.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/stats3.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests_fonctionnels/stats4.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oldFichierTest/testListeChaine.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/oldFichierTest/testMain.c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tri.sh" />
+    <list default="true" id="9c9d6223-1535-46cf-827e-185de3a7ce50" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gestionStatistique.h" afterPath="$PROJECT_DIR$/gestionStatistique.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listeChaine.c" afterPath="$PROJECT_DIR$/listeChaine.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listeChaine.h" afterPath="$PROJECT_DIR$/listeChaine.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.c" afterPath="$PROJECT_DIR$/main.c" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -64,8 +42,8 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6792453">
-              <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.47708896">
+              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
               <folding>
                 <element signature="e#38#56#0" expanded="true" />
               </folding>
@@ -77,7 +55,7 @@
         <entry file="file://$PROJECT_DIR$/listeChaine.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/listeChaine.c">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#39#63#0" expanded="true" />
               </folding>
@@ -109,8 +87,10 @@
         <entry file="file://$PROJECT_DIR$/gestionStatistique.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
+              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding>
+                <element signature="e#106#124#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,8 +109,10 @@
         <entry file="file://$PROJECT_DIR$/gestionStatistique.c">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#39#70#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,10 +146,10 @@
         <option value="$PROJECT_DIR$/testListeChaine.c" />
         <option value="$PROJECT_DIR$/makefile" />
         <option value="$PROJECT_DIR$/listeChaine.c" />
-        <option value="$PROJECT_DIR$/listeChaine.h" />
-        <option value="$PROJECT_DIR$/main.c" />
         <option value="$PROJECT_DIR$/gestionStatistique.c" />
         <option value="$PROJECT_DIR$/gestionStatistique.h" />
+        <option value="$PROJECT_DIR$/listeChaine.h" />
+        <option value="$PROJECT_DIR$/main.c" />
       </list>
     </option>
   </component>
@@ -256,7 +238,7 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C/C++" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="124" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
@@ -281,7 +263,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.triage">
+  <component name="RunManager" selected="Application.main">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="tp2" TARGET_NAME="tp2" CONFIG_NAME="Debug">
       <envs />
       <method />
@@ -299,18 +281,18 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="triage" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="tri" TARGET_NAME="triage" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tri" RUN_TARGET_NAME="triage">
+    <configuration default="false" name="main" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="tests_fonctionnels/1.txt" WORKING_DIR="file://$PROJECT_DIR$" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="tri" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tri" RUN_TARGET_NAME="main">
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="main" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="tri" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tri" RUN_TARGET_NAME="main">
+    <configuration default="false" name="triage" type="CMakeRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="tri" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tri" RUN_TARGET_NAME="main">
       <envs />
       <method />
     </configuration>
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
-      <item index="1" class="java.lang.String" itemvalue="Application.triage" />
-      <item index="2" class="java.lang.String" itemvalue="Application.main" />
+      <item index="1" class="java.lang.String" itemvalue="Application.main" />
+      <item index="2" class="java.lang.String" itemvalue="Application.triage" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -402,31 +384,37 @@
       <option name="project" value="LOCAL" />
       <updated>1437606679815</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Version 2.0&#10;A faire:&#10;Faire la documentation">
+      <created>1437608677965</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1437608677965</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.093819804" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1325391" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="766" y="0" width="526" height="682" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="766" y="0" width="526" height="682" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -452,11 +440,12 @@
     <MESSAGE value="Version 1.8&#10;A faire:&#10;  - Faire du clean up, optimisation" />
     <MESSAGE value="Version 1.9&#10;A faire:&#10;  - Faire du clean up, optimisation" />
     <MESSAGE value="Version 2.0&#10;A faire:&#10;  - Faire du clean up, optimisation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 2.0&#10;A faire:&#10;  - Faire du clean up, optimisation" />
+    <MESSAGE value="Version 2.0&#10;A faire:&#10;Faire la documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 2.0&#10;A faire:&#10;Faire la documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="24" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
@@ -498,7 +487,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -514,7 +505,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -540,7 +533,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -556,7 +551,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -600,7 +597,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -608,7 +607,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -652,7 +653,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -660,7 +663,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -704,7 +709,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -712,7 +719,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,7 +765,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -764,7 +775,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -808,7 +821,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="29" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
-          <folding />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -816,7 +831,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="33" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -859,26 +876,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gestionStatistique.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gestionStatistique.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/listeChaine.c">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#39#63#0" expanded="true" />
           </folding>
@@ -888,15 +889,35 @@
     <entry file="file://$PROJECT_DIR$/listeChaine.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="2" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestionStatistique.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding>
+            <element signature="e#106#124#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gestionStatistique.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#70#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6792453">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.47708896">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
           <folding>
             <element signature="e#38#56#0" expanded="true" />
           </folding>

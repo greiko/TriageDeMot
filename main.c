@@ -9,7 +9,7 @@
 #include "gestionStatistique.h"
 #include "listeChaine.h"
 
-#define  TAILLE_MOT_MAX 20
+#define  TAILLE_MOT_MAX 82
 
 /*
  * Valide si le fichier contenant les mots soit bien traitee.
@@ -54,7 +54,7 @@ FILE *ouvrirFichier(char *pathFichier)
   fichier = fopen(pathFichier, "r");
   if (fichier == NULL)
   {
-    printf("Erreur lors d'ouverture du fichier: %d\n",errno);
+    printf("Erreur lors d'ouverture du fichier: %d\n", errno);
     exit(1);
   }
   return fichier;
@@ -112,7 +112,7 @@ Option_t validationOptionFichier(int nbArgument, char **arguments)
 {
   if (nbArgument < 2 || nbArgument > 4)
   {
-    printf("Erreur nombre d'arguments! \nVeuillez lire le README pour les instructions: %d\n",errno);
+    printf("Erreur nombre d'arguments! \nVeuillez lire le README pour les instructions: %d\n", errno);
     exit(1);
   }
   if (nbArgument == 4 && strcmp("-S", arguments[2]) == 0)
@@ -125,7 +125,7 @@ Option_t validationOptionFichier(int nbArgument, char **arguments)
   }
   else
   {
-    printf("Erreur utilisation du programme!\nVeuillez lire le README pour les instructions: %d\n",errno);
+    printf("Erreur utilisation du programme!\nVeuillez lire le README pour les instructions: %d\n", errno);
     exit(1);
   }
 }

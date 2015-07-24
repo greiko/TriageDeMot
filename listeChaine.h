@@ -6,7 +6,7 @@
 #ifndef TP2_LISTECHAINE_H
 #define TP2_LISTECHAINE_H
 
-#define TAILLE_MOT_MAX 20
+#define TAILLE_MOT_MAX 82
 
 #include "gestionStatistique.h"
 
