@@ -50,9 +50,27 @@ void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats);
  */
 Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boolean_t premierMot);
 
+/*
+ * Verifie si c est un ligne pour les statistiques
+ * c: caractere
+ * stats: Statistiques
+ */
 void estUneLigne(char c,Stats_t stats);
 
+/*
+ * Si c n'est pas EOF il rentre dans cette fonction pour traiter les prochains caractere
+ * c: le char courant du fichier
+ * mot: le mot complet
+ * stats: Les statistiques
+ * liste: La liste chaine
+ * n: utiliser pour mettre un \0 a la fin du mot
+ * premierMot: permet de savoir si cest le debut du programme
+ * fichier: le fichier contenant les mots
+ * Valeur de retour: La liste chaine modifie
+ */
 Liste_t estPasFinDeFichier(char c,char mot[TAILLE_MOT_MAX],int n,Liste_t liste,Boolean_t premierMot,Stats_t stats,FILE* fichier);
+
+
 int main(int argc, char **argv)
 {
   FILE *fichierALire = NULL;
