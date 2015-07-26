@@ -1,7 +1,10 @@
-//
-// Created by greiko on 7/8/15.
-//
-
+/*
+* Created by Nicolas Papanicolaou on 7/12/15.
+* Code Permanent: PAPN20098909
+* がっきプロジェクト2(Projet de Session 2)
+* Triage de mot, en enlevant les doublons et qui peut generer des statistiques.
+*
+*/
 #include "gestionStatistique.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,18 +21,18 @@ struct statistique
   int *lettre_plus_frequente;
 };
 
-Stats_t initiationStats(Stats_t stats)
+Stats_t initialisationStats(Stats_t stats)
 {
   stats = (Stats_t) malloc(sizeof(struct statistique));
   stats->nb_lettres = 0;
   stats->nb_lignes = 0;
   stats->nb_mots_avec_double = 0;
   stats->nb_mots_sans_double = 0;
-  stats->lettre_plus_frequente = initiationTableauLettre();
+  stats->lettre_plus_frequente = initialisationTableauLettre();
   return stats;
 }
 
-int *initiationTableauLettre()
+int *initialisationTableauLettre()
 {
   int *tableau;
   tableau = (int *) malloc(sizeof(int) * 26);
@@ -81,7 +84,7 @@ void frequenceLettre(Stats_t stats, char lettre)
   stats->lettre_plus_frequente[position] += 1;
 }
 
-char lettreFrequente(Stats_t stats)
+char laLettreFrequente(Stats_t stats)
 {
   char alphabet[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
                      'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
@@ -108,7 +111,7 @@ void afficherStats(Stats_t stats, char *nomDuFichier)
   fprintf(fichier, "Nombre de mots sans doublons: %d\n", stats->nb_mots_sans_double);
   fprintf(fichier, "Nombre de lignes: %d\n", stats->nb_lignes);
   fprintf(fichier, "Nombre de lettres: %d\n", stats->nb_lettres);
-  fprintf(fichier, "Lettre la plus frequente: %c\n", lettreFrequente(stats));
+  fprintf(fichier, "Lettre la plus frequente: %c\n", laLettreFrequente(stats));
   fclose(fichier);
 }
 

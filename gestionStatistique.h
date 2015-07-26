@@ -1,7 +1,10 @@
-//
-// Created by greiko on 7/8/15.
-//
-
+/*
+* Created by Nicolas Papanicolaou on 7/12/15.
+* Code Permanent: PAPN20098909
+* がっきプロジェクト2(Projet de Session 2)
+* Triage de mot, en enlevant les doublons et qui peut generer des statistiques.
+*
+*/
 
 #ifndef TP2_GESTIONSTATISTIQUE_H
 #define TP2_GESTIONSTATISTIQUE_H
@@ -15,13 +18,13 @@ typedef struct statistique *Stats_t;
  * Initialisation d'une structure statistique.
  * Valeur de retour: Pointeur sur un structure statistique avec de la memoire alloue.
  */
-Stats_t initiationStats(Stats_t stats);
+Stats_t initialisationStats(Stats_t stats);
 
 /*
  * Initiation d'un tableau de integer a 0.
  * Valeur de retour: Le tableau iniatilise.
  */
-int *initiationTableauLettre();
+int *initialisationTableauLettre();
 
 /*
  * Compte le nombre de lettre dans le mot pour l'ajouter dans les statistiques.
@@ -63,7 +66,7 @@ void frequenceLettre(Stats_t stats, char lettre);
  * stats: Les statistiques.
  * Valeur de retour: La lettre la plus frequente.
  */
-char lettreFrequente(Stats_t stats);
+char laLettreFrequente(Stats_t stats);
 
 /*
  * Inscris dans le fichier les statistiques rassembler pendant le programme.

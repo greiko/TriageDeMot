@@ -1,7 +1,10 @@
-//
-// Created by greiko on 7/8/15.
-//
-
+/*
+* Created by Nicolas Papanicolaou on 7/12/15.
+* Code Permanent: PAPN20098909
+* がっきプロジェクト2(Projet de Session 2)
+* Triage de mot, en enlevant les doublons et qui peut generer des statistiques.
+*
+*/
 #include "listeChaine.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,7 +19,7 @@ struct listeChaine
   Liste_t prochain;
 };
 
-Liste_t creeMot(char *premierMot, Stats_t stats)
+Liste_t creationMot(char *premierMot, Stats_t stats)
 {
   Liste_t nouvelleListe;
   compteurMotTotal(stats);
@@ -32,7 +35,7 @@ Liste_t ajouterMot(Liste_t liste, char mot[TAILLE_MOT_MAX], Stats_t stats)
     printf("Erreur, le mot est NULL!: %d\n",errno);
     exit(0);
   }
-  Liste_t nouveauMot = creeMot(mot, stats);
+  Liste_t nouveauMot = creationMot(mot, stats);
   Boolean_t echanger = FALSE;
   Liste_t debutListe = liste;
   Liste_t courant = liste;
@@ -65,7 +68,7 @@ Liste_t placementMot(Boolean_t echanger, Stats_t stats, Liste_t courant, Liste_t
       courant->prochain = nouveauMot;
       return debutListe;
     }
-    courant = placerLeMot(courant, nouveauMot);
+    courant = interchangeMot(courant, nouveauMot);
     if (courant->precedent == NULL)
     {
       debutListe = courant;
@@ -74,7 +77,7 @@ Liste_t placementMot(Boolean_t echanger, Stats_t stats, Liste_t courant, Liste_t
   return debutListe;
 }
 
-Liste_t placerLeMot(Liste_t courant, Liste_t nouveauMot)
+Liste_t interchangeMot(Liste_t courant, Liste_t nouveauMot)
 {
   if (courant->precedent != NULL)
   {
@@ -87,7 +90,7 @@ Liste_t placerLeMot(Liste_t courant, Liste_t nouveauMot)
   return courant;
 }
 
-int longueur(char *courant, char *nouveauMot)
+int comparaisonLongueur(char *courant, char *nouveauMot)
 {
   int longueurCourte = 0;
   int longueurCourant = (int) strlen(courant);
@@ -99,7 +102,7 @@ int longueur(char *courant, char *nouveauMot)
 Boolean_t comparaisonMot(char *motCourant, char *nouveauMot)
 {
   Boolean_t echanger = FALSE;
-  int longueurCourte = longueur(motCourant, nouveauMot);
+  int longueurCourte = comparaisonLongueur(motCourant, nouveauMot);
   int i;
   if (strcmp(motCourant, nouveauMot) == 0)
   {

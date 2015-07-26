@@ -1,6 +1,10 @@
-//
-// Created by greiko on 7/8/15.
-//
+/*
+* Created by Nicolas Papanicolaou on 7/12/15.
+* Code Permanent: PAPN20098909
+* がっきプロジェクト2(Projet de Session 2)
+* Triage de mot, en enlevant les doublons et qui peut generer des statistiques.
+*
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,6 +38,16 @@ Option_t validationOptionFichier(int nbArgument, char **arguments);
  */
 void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats);
 
+/*
+ * Les instructions quoi faire quand le mot est complet.
+ * c: le char courant du fichier
+ * mot: le mot complet
+ * stats: Les statistiques
+ * liste: La liste chaine
+ * n: utiliser pour mettre un \0 a la fin du mot
+ * premierMot: permet de savoir si cest le debut du programme
+ * Valeur de retour: La liste chaine modifie
+ */
 Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boolean_t premierMot);
 
 
@@ -68,7 +82,7 @@ void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats)
   char c = (char) fgetc(fichier);
   char mot[TAILLE_MOT_MAX];
   int n = 0;
-  stats = initiationStats(stats);
+  stats = initialisationStats(stats);
   while (c != EOF)
   {
     if (c != '\n' && c != ' ')
@@ -98,7 +112,7 @@ Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boole
   if (premierMot == TRUE)
   {
     compteurMotSansDoublons(stats, mot);
-    liste = creeMot(mot, stats);
+    liste = creationMot(mot, stats);
     compteurLettre(stats, mot);
   }
   else
