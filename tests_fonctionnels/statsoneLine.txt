@@ -1,0 +1,5 @@
+Nombre de mots avec doublons: 0
+Nombre de mots sans doublons: 0
+Nombre de lignes: 1
+Nombre de lettres: 0
+Lettre la plus frequente:  

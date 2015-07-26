@@ -1,0 +1,5 @@
+Nombre de mots avec doublons: 5
+Nombre de mots sans doublons: 5
+Nombre de lignes: 5
+Nombre de lettres: 22
+Lettre la plus frequente: E

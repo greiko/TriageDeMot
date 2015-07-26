@@ -1,0 +1,5 @@
+Nombre de mots avec doublons: 26
+Nombre de mots sans doublons: 26
+Nombre de lignes: 20
+Nombre de lettres: 26
+Lettre la plus frequente: A
