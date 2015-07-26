@@ -22,7 +22,10 @@ struct listeChaine
 Liste_t creationMot(char *premierMot, Stats_t stats)
 {
   Liste_t nouvelleListe;
-  compteurMotTotal(stats);
+  if (strcmp(premierMot,"") != 0)
+  {
+    compteurMotTotal(stats);
+  }
   nouvelleListe = (Liste_t) malloc(sizeof(struct listeChaine));
   strcpy(nouvelleListe->mot, premierMot);
   return nouvelleListe;
@@ -129,12 +132,15 @@ Boolean_t comparaisonMot(char *motCourant, char *nouveauMot)
 void afficherListe(Liste_t liste, Stats_t stats, Option_t avecStats, char *nomDuFichier)
 {
   Liste_t courant = liste;
-  while (courant->prochain != NULL)
+  if (courant != NULL)
   {
+    while (courant->prochain != NULL)
+    {
+      printf("%s\n", courant->mot);
+      courant = courant->prochain;
+    }
     printf("%s\n", courant->mot);
-    courant = courant->prochain;
   }
-  printf("%s\n", courant->mot);
   if (avecStats == AVEC)
   {
     afficherStats(stats, nomDuFichier);

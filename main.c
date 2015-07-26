@@ -50,7 +50,9 @@ void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats);
  */
 Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boolean_t premierMot);
 
+void estUneLigne(char c,Stats_t stats);
 
+Liste_t estPasFinDeFichier(char c,char mot[TAILLE_MOT_MAX],int n,Liste_t liste,Boolean_t premierMot,Stats_t stats,FILE* fichier);
 int main(int argc, char **argv)
 {
   FILE *fichierALire = NULL;
@@ -74,48 +76,78 @@ FILE *ouvrirFichier(char *pathFichier)
   return fichier;
 }
 
+void estUneLigne(char c,Stats_t stats)
+{
+  if (c == '\n')
+  {
+    compteurLignes(stats);
+  }
+}
+
+
+Liste_t estPasFinDeFichier(char c,char mot[TAILLE_MOT_MAX],int n,Liste_t liste,Boolean_t premierMot,Stats_t stats,FILE* fichier)
+{
+  Boolean_t premiereLettre = TRUE;
+  while (c != EOF)
+  {
+    if (c != '\n' && c != ' ')
+    {
+      premiereLettre = FALSE;
+      mot[n] = c;
+      n++;
+      c = fgetc(fichier);
+    }
+    else
+    {
+      while (c == '\n' || c == ' ')
+      {
+        estUneLigne(c,stats);
+        c = fgetc(fichier);
+      }
+      if (premiereLettre == FALSE)
+      {
+        liste = motComplet(c, mot, stats, liste, n, premierMot);
+        n = 0;
+        premierMot = FALSE;
+        premiereLettre = TRUE;
+      }
+    }
+  }
+  return liste;
+}
+
 void creerListeChaine(FILE *fichier, Option_t option, char *nomDuFichierStats)
 {
   Liste_t liste = NULL;
   Stats_t stats = NULL;
   Boolean_t premierMot = TRUE;
-  char c = (char) fgetc(fichier);
+  char c = fgetc(fichier);
   char mot[TAILLE_MOT_MAX];
   int n = 0;
-  stats = initialisationStats(stats);
-  while (c != EOF)
+  if (c != EOF)
   {
-    if (c != '\n' && c != ' ')
-    {
-      mot[n] = c;
-      n++;
-      c = (char) fgetc(fichier);
-    }
-    else
-    {
-      liste = motComplet(c, mot, stats, liste, n, premierMot);
-      n = 0;
-      premierMot = FALSE;
-      c = (char) fgetc(fichier);
-    }
+    stats = initialisationStats(stats);
+    liste = estPasFinDeFichier(c,mot,n,liste,premierMot,stats,fichier);
+    afficherListe(liste, stats, option, nomDuFichierStats);
   }
-  afficherListe(liste, stats, option, nomDuFichierStats);
 }
 
 Liste_t motComplet(char c, char *mot, Stats_t stats, Liste_t liste, int n, Boolean_t premierMot)
 {
   if (c == '\n')
   {
-    compteurLignes(stats, 1);
+    compteurLignes(stats);
   }
   mot[n] = '\0';
-  if (premierMot == TRUE)
+  if (premierMot == TRUE && mot != NULL)
   {
-    compteurMotSansDoublons(stats, mot);
+    if (strcmp(mot,"") != 0){
+      compteurMotSansDoublons(stats, mot);
+    }
     liste = creationMot(mot, stats);
     compteurLettre(stats, mot);
   }
-  else
+  else if (mot != NULL)
   {
     liste = ajouterMot(liste, mot, stats);
   }

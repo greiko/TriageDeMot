@@ -11,24 +11,28 @@
 #include <string.h>
 #include <errno.h>
 
+typedef enum
+{
+  TRUE, FALSE
+} Boolean_t;
 
 struct statistique
 {
-  int nb_mots_sans_double;
-  int nb_mots_avec_double;
-  int nb_lignes;
-  int nb_lettres;
-  int *lettre_plus_frequente;
+  int nbMotsSansDouble;
+  int nbMotsAvecDouble;
+  int nbLignes;
+  int nbLettres;
+  int *lettrePlusFrequente;
 };
 
 Stats_t initialisationStats(Stats_t stats)
 {
   stats = (Stats_t) malloc(sizeof(struct statistique));
-  stats->nb_lettres = 0;
-  stats->nb_lignes = 0;
-  stats->nb_mots_avec_double = 0;
-  stats->nb_mots_sans_double = 0;
-  stats->lettre_plus_frequente = initialisationTableauLettre();
+  stats->nbLettres = 0;
+  stats->nbLignes = 0;
+  stats->nbMotsAvecDouble = 0;
+  stats->nbMotsSansDouble = 0;
+  stats->lettrePlusFrequente = initialisationTableauLettre();
   return stats;
 }
 
@@ -39,7 +43,7 @@ int *initialisationTableauLettre()
   int i;
   for (i = 0; i < 26; i++)
   {
-    tableau[i] = 0;
+    tableau[i] = 1;
   }
   return tableau;
 }
@@ -47,7 +51,7 @@ int *initialisationTableauLettre()
 
 void compteurLettre(Stats_t stats, char *mot)
 {
-  stats->nb_lettres += strlen(mot);
+  stats->nbLettres += strlen(mot);
 }
 
 void compteurMotSansDoublons(Stats_t stats, char *mot)
@@ -57,17 +61,17 @@ void compteurMotSansDoublons(Stats_t stats, char *mot)
   {
     frequenceLettre(stats, mot[i]);
   }
-  stats->nb_mots_sans_double += 1;
+  stats->nbMotsSansDouble += 1;
 }
 
 void compteurMotTotal(Stats_t stats)
 {
-  stats->nb_mots_avec_double += 1;
+  stats->nbMotsAvecDouble += 1;
 }
 
-void compteurLignes(Stats_t stats, int combien)
+void compteurLignes(Stats_t stats)
 {
-  stats->nb_lignes += combien;
+  stats->nbLignes += 1;
 }
 
 void frequenceLettre(Stats_t stats, char lettre)
@@ -81,24 +85,30 @@ void frequenceLettre(Stats_t stats, char lettre)
   {
     position++;
   }
-  stats->lettre_plus_frequente[position] += 1;
+  stats->lettrePlusFrequente[position] += 1;
 }
 
 char laLettreFrequente(Stats_t stats)
 {
   char alphabet[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
                      'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-                     'U', 'V', 'W', 'X', 'Y', 'Z'};
-  int frequence = stats->lettre_plus_frequente[0];
+                     'U', 'V', 'W', 'X', 'Y', 'Z' , ' '};
+  int frequence = 1;
   int position = 0;
+  Boolean_t aucuneLettre = TRUE;
   int i;
-  for (i = 1; i < 26; i++)
+  for (i = 0;i < 26; i++)
   {
-    if (stats->lettre_plus_frequente[i] > frequence)
+    if (stats->lettrePlusFrequente[i] > frequence)
     {
-      frequence = stats->lettre_plus_frequente[i];
+      frequence = stats->lettrePlusFrequente[i];
       position = i;
+      aucuneLettre = FALSE;
     }
+  }
+  if (aucuneLettre == TRUE)
+  {
+    position = 26;
   }
   return alphabet[position];
 }
@@ -107,10 +117,10 @@ void afficherStats(Stats_t stats, char *nomDuFichier)
 {
   FILE *fichier = NULL;
   fichier = validationFichierSortie(fichier, nomDuFichier);
-  fprintf(fichier, "Nombre de mots avec doublons: %d\n", stats->nb_mots_avec_double);
-  fprintf(fichier, "Nombre de mots sans doublons: %d\n", stats->nb_mots_sans_double);
-  fprintf(fichier, "Nombre de lignes: %d\n", stats->nb_lignes);
-  fprintf(fichier, "Nombre de lettres: %d\n", stats->nb_lettres);
+  fprintf(fichier, "Nombre de mots avec doublons: %d\n", stats->nbMotsAvecDouble);
+  fprintf(fichier, "Nombre de mots sans doublons: %d\n", stats->nbMotsSansDouble);
+  fprintf(fichier, "Nombre de lignes: %d\n", stats->nbLignes);
+  fprintf(fichier, "Nombre de lettres: %d\n", stats->nbLettres);
   fprintf(fichier, "Lettre la plus frequente: %c\n", laLettreFrequente(stats));
   fclose(fichier);
 }

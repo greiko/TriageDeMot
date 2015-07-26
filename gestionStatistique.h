@@ -52,7 +52,7 @@ void compteurMotTotal(Stats_t stats);
  * stats: Les statistiques.
  * combien: Combien de ligne a ajouter.
  */
-void compteurLignes(Stats_t stats, int combien);
+void compteurLignes(Stats_t stats);
 
 /*
  * Calcul les frequences de les lettres dans le fichier.
