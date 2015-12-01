@@ -1,4 +1,0 @@
-Nombre de mots avec doublons: 20
-Nombre de mots sans doublons: 12
-Nombre de lignes: 4
-Nombre de lettres: 52
